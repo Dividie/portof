@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen p-6">
+
+    <div class="max-w-4xl mx-auto space-y-8">
+        <div class="flex justify-between items-center border-b border-slate-800 pb-4">
+            <h1 class="text-2xl font-bold tracking-wide text-indigo-400"><i class="fas fa-user-shield mr-2"></i>Admin Dashboard</h1>
+            <a href="index.html" class="text-sm text-slate-400 hover:text-slate-200"><i class="fas fa-arrow-left mr-1"></i> Lihat Web</a>
+        </div>
+
+        <div class="glass p-6 rounded-2xl border border-slate-800">
+            <h2 id="form-title" class="text-lg font-semibold mb-4 text-purple-400">Tambah Karya Baru</h2>
+            <form id="project-form" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input type="hidden" id="project-id">
+                
+                <div class="space-y-1">
+                    <label class="text-xs text-slate-400">Judul Proyek</label>
+                    <input type="text" id="title" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-sm focus:outline-none focus:border-indigo-500">
+                </div>
+                
+                <div class="space-y-1">
+                    <label class="text-xs text-slate-400">Ikon FontAwesome (Misal: fa-laptop-code)</label>
+                    <input type="text" id="icon" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-sm focus:outline-none focus:border-indigo-500">
+                </div>
+
+                <div class="space-y-1">
+                    <label class="text-xs text-slate-400">Tag 1 (Kategori)</label>
+                    <input type="text" id="tag1" placeholder="Contoh: Web App" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-sm focus:outline-none focus:border-indigo-500">
+                </div>
+
+                <div class="space-y-1">
+                    <label class="text-xs text-slate-400">Tag 2 (Teknologi)</label>
+                    <input type="text" id="tag2" placeholder="Contoh: React / Node.js" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-sm focus:outline-none focus:border-indigo-500">
+                </div>
+
+                <div class="space-y-1 md:col-span-2">
+                    <label class="text-xs text-slate-400">Deskripsi Singkat</label>
+                    <textarea id="description" rows="3" required class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2 text-sm focus:outline-none focus:border-indigo-500"></textarea>
+                </div>
+
+                <div class="md:col-span-2 pt-2">
+                    <button type="submit" class="w-full bg-gradient-to-r from-indigo-500 to-purple-500 text-sm font-medium py-2.5 rounded-xl hover:opacity-90 transition-all">
+                        Simpan Karya
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="space-y-4">
+            <h2 class="text-lg font-semibold text-slate-300">Daftar Karya Kamu</h2>
+            <div id="admin-project-list" class="grid gap-4">
+                </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
